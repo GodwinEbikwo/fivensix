@@ -1,12 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import { useRef } from 'react';
-import Hero from '../components/home/Hero';
-import FeatureProducts from '../components/home/FeatureProducts';
-import Cta from '../components/home/Cta';
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
+import AllOrdersPage from '../components/order/Orders';
 import Layout from '../components/layout/Layout';
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import Footer from '../components/footer/Footer';
 
-export default function Home() {
+export default function Orders() {
   const containerRef = useRef(null);
   return (
     <Layout>
@@ -18,12 +17,10 @@ export default function Home() {
         }}
         watch={[]}
         containerRef={containerRef}>
-        <div data-scroll-container id="scroll-container" ref={containerRef}>
-          <Hero />
-          <FeatureProducts />
-          <Cta />
+        <section data-scroll-container id="scroll-container" ref={containerRef}>
+          <AllOrdersPage />
           <Footer />
-        </div>
+        </section>
       </LocomotiveScrollProvider>
     </Layout>
   );
